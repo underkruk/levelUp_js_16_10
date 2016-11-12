@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2 - Random Games</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .title {
+            width: 400px;
+            margin: auto;
+        }
+
+        h1 {
+            text-transormer: uppercase;
+            font-size: 42px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .button {
+            background-color: #149780;
+            border: 2px solid #149780;
+            width: 200px;
+            height: 45px;
+            padding: 10px 20px 10px 20px;
+            margin-left: 40px;
+            border-radius: 2px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #222;
+            color: #149780;
+        }
+
+        .players {
+            margin: 0px 260px 0px 200px;
+            position: relative;
+        }
+
+        .player_1, .player_2 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .player_1 {
+            float: left;
+        }
+
+        .player_2 {
+            float: right;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="title">
+    <h1>Random Game</h1>
+    <button class="button" onclick="start_game()">Let's play!</button>
+</div>
+<div class="players">
+    <div class="player_1">
+        <h2>Player 1</h2>
+        <img src="img/p1.jpg" alt="Player_1">
+
+    </div>
+    <div class="player_2">
+        <h2>Player 2</h2>
+        <img src="img/p2.jpg" alt="Player_2">
+    </div>
+
+</div>
+
+
+<script>
+    function start_game() {
+
+        let str = 'Would you like to generate random number from 1 to 11? Enter Y or N?', name = 'Player 1',
+                min = 1, max = 11, priority = 1, response = 0,
+                generated_num = 1, points = 0, player_1 = 0, player_2 = 0;
+
+
+        do {
+
+            response = getConfirm(prompt(name + '! ' + str));
+
+            if (response == 1) {
+
+
+                generated_num = getRandom(min, max);
+
+                points += generated_num;
+
+                if (points > 21) {
+
+                    alert(name + " loose!");
+
+                    break;
+                }
+
+                alert(name + "! Generated number is " + generated_num + "! Total points: " + points + "! Do you want to  generate new number?");
+
+
+            } else if (response == 0) {
+
+                if (priority % 2 == 1) {
+
+                    player_1 = points;
+
+                    name = "Player 2";
+
+                } else if (priority % 2 == 0) {
+
+                    player_2 = points;
+
+                    name = "Player 1";
+
+                    if (player_1 > player_2) {
+
+                        alert("Player 1 win!");
+
+                    } else if (player_1 < player_2) {
+
+                        alert("Player 2 win!");
+
+                    } else if (player_1 == player_2) {
+
+                        alert("Dead Heat");
+                    }
+
+                    break;
+                }
+
+                points = 0;
+
+                priority++;
+
+            } else if (response == -1) {
+
+                alert("You are entering something else! Try again?")
+            }
+
+
+        } while (points <= 21)
+    }
+
+
+    function getRandom(min, max) {
+
+        return parseInt(Math.random() * (max - min + 1) + min);
+    }
+
+    function getConfirm(str) {
+
+        switch (str) {
+            case "Y":
+            case "y":
+                return 1;
+                break;
+            case "N":
+            case "n":
+
+                return 0;
+                break;
+
+            default:
+                return -1;
+        }
+    }
+
+</script>
+</body>
+</html>
