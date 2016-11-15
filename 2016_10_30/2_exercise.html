@@ -94,9 +94,9 @@
 
         do {
 
-            response = getConfirm(prompt(name + '! ' + str));
+            response = prompt(name + '! ' + str).toLowerCase();
 
-            if (response == 1) {
+            if (response == "y") {
 
 
                 generated_num = getRandom(min, max);
@@ -113,7 +113,7 @@
                 alert(name + "! Generated number is " + generated_num + "! Total points: " + points + "! Do you want to  generate new number?");
 
 
-            } else if (response == 0) {
+            } else if (response == "n") {
 
                 if (priority % 2 == 1) {
 
@@ -147,7 +147,7 @@
 
                 priority++;
 
-            } else if (response == -1) {
+            } else {
 
                 alert("You are entering something else! Try again?")
             }
@@ -162,23 +162,6 @@
         return parseInt(Math.random() * (max - min + 1) + min);
     }
 
-    function getConfirm(str) {
-
-        switch (str) {
-            case "Y":
-            case "y":
-                return 1;
-                break;
-            case "N":
-            case "n":
-
-                return 0;
-                break;
-
-            default:
-                return -1;
-        }
-    }
 
 </script>
 </body>

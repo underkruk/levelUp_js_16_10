@@ -24,13 +24,16 @@
 
         console.log(email);
 
-        if (email.indexOf("@") > 0 && email.indexOf(".") > 0) {
+        let indexOfAt  = email.indexOf("@"),
+            indexOfDot =  email.indexOf(".")   ;
 
-            let name = email.substr(0, email.indexOf("@")),
+        if (indexOfAt > 0 && indexOfDot > 0) {
 
-                    domain = email.slice(email.indexOf("@") + 1, email.indexOf(".")),
+            let name = email.substr(0, indexOfAt),
 
-                    zone = email.slice(email.indexOf(".") + 1),
+                    domain = email.slice(indexOfAt + 1, indexOfDot),
+
+                    zone = email.slice(indexOfDot + 1),
 
                     message = "Please, reload your page and try again!";
 
