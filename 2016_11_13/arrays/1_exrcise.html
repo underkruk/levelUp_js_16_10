@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+    <style>
+        body{
+            background-color: #222;
+            color: #fff;
+        }
+        h1{
+            text-transform: uppercase;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Arrays</h1>
+
+
+<script>
+    let nums = [1, 2, 3, 5, 8, 13, 21, 34],
+        str = ["this", "is", "a", "very", "long", "array", "which", "has", "absolutely", "no", "sense"];
+
+    //1. Возвращает сумму удвоенных значений каждого элемента (Number)
+
+    let sum_array = 0;
+    nums.forEach(function(elem, iter, array){
+        sum_array += elem*2;
+    });
+    console.log(sum_array);
+
+    //2. Узнать, есть ли в массиве четные числа (Boolean)
+
+    console.log(nums.some(function(e){
+        return e % 2 === 0
+    }));
+
+    //3. Соединить элементы массива в одну строку, где слова разделены пробелами  (String)
+
+    console.log(str.join(" "));
+
+    //4.Получить новый массив, в котором к каждому элементу (строке) будет добавлено число, равное количеству символов
+    // в этой строке. Например, [“this - 4”, “is - 2” ....] (Array)
+
+    console.log(str.map(function(e){
+        return `${e} - ${e.length}`;
+    }));
+
+    //5. Получить новый массив, в котором все элементы (строки) содержат 4 или более символов (Array)
+
+    console.log(str.filter(function(e){
+        return e.length > 4;
+    }));
+
+    //6. Получить массив, который будет содержать только нечетные числа (Array)
+
+    console.log(nums.filter(function(e){
+        return e % 2 !== 0;
+    }));
+
+    //7. Сообщить, является ли сумма всех элементов больше 100  (Boolean)
+
+        console.log(nums.reduce(function(tmp, element){
+            return tmp + element > 100
+        }));
+
+    //8. Получить новый массив, в котором все элементы будут отсортированы по количеству символов в строке
+    // по возрастанию  (Array)
+
+        str.sort(function(a, b){
+            if (a.length - b.length > 0) return 1;
+            if (a.length - b.length < 0) return -1;
+        });
+    console.log(str);
+
+    //9. Найти индекс самого длинного слова в массиве (Number)
+
+    function getMaxWord (arr){
+        let max = 0, i = 0, element = '';
+       while ( i < arr.length ){
+        if (max < arr[i].length){
+            max = arr[i].length;
+            element = arr[i];
+        }
+           i++;
+       }
+       return element;
+    }
+
+    console.log(str.indexOf(getMaxWord(str)));
+
+
+    //10. Получить строку, которая будет содержать все элементы двух массивов перечисленных через запятую  (String)
+
+    console.log(nums.concat(str).join(", "));
+
+
+</script>
+</body>
+</html>

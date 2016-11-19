@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arguments, REST, SPREAD</title>
+    <style>
+        body{
+            background-color: #222;
+            color: #fff;
+        }
+        h1{
+            text-transform: uppercase;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Arguments, REST, SPREAD</h1>
+
+<script>
+
+    function argTostring(){
+
+        let strType = '';
+
+         for(let i = 0, len = arguments.length; i < len; i++ ){
+
+             strType += typeof(arguments[i]);
+
+             strType += (i != len-1) ?  ", " : "";
+
+         }
+        console.log( strType );
+    }
+
+    function restToString(...param){
+
+        let strType = '';
+
+        param.forEach(function(e,i,array){
+
+            strType += typeof(e);
+
+            strType += (i != param.length-1) ?  ", " : "";
+
+        })
+
+        console.log(strType);
+    }
+
+
+    argTostring(1, "Hello", {age:20}, true, 0.34);
+
+    let arr = [false, "Hello", {age:20}, true, 0.34];
+
+    restToString(...arr);
+
+</script>
+</body>
+</html>

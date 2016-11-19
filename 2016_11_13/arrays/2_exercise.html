@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+    <style>
+        body{
+            background-color: #222;
+            color: #fff;
+        }
+        h1{
+            text-transform: uppercase;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Arrays - exercise #2</h1>
+
+<script>
+
+    let lorem_str = "Lorem ipsum dolor sit amet, facilisi tristique. Arcu duis. Eget faucibus ipsum, vel lacus sociis in, vestibulum aliquam pede sagittis ac, nulla sed pede, iste sollicitudin imperdiet mattis in ipsum velit. Voluptas tempor pede vitae, urna minus, consequat id leo et. Quisque nulla congue a adipiscing vestibulum luctus, donec sociosqu integer sodales, et interdum facilisi ac varius a elit, posuere rutrum pellentesque ut. Nec volutpat, vitae at, feugiat aenean turpis morbi elementum per duis, interdum sed ut odio facilisi, est nam urna consequat cras nibh et. Nulla arcu lectus ut, dapibus vestibulum sed, nostra augue. Placerat mollis, lacus cum massa. Velit urna purus et, vivamus fermentum, in rutrum, etiam metus mattis mollis ligula nec pede, non omnis laoreet suspendisse lobortis. Officiis lectus enim. Vivamus habitasse, nulla risus gravida, integer blandit donec vel sit risus penatibus.";
+
+    (function(str){
+
+       let tmp_string = str.split("").filter(function(e){
+
+            e = e.toLowerCase();
+
+            return (e !== "a"  && e !== "e" && e !== "i" && e !== "o" && e !== "u" && e !== "u" && e !== "y");
+
+        });
+
+        let new_string = tmp_string.join("");
+
+        console.log(new_string);
+
+        alert(new_string);
+
+    })(lorem_str)
+
+</script>
+</body>
+</html>

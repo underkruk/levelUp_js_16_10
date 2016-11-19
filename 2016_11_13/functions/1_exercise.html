@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function iterator</title>
+    <style>
+        body{
+            background-color: #222;
+            color: #fff;
+        }
+        h1{
+            text-transform: uppercase;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Function Iterator</h1>
+
+<script>
+
+    let getCount = (function(){
+
+        let start = prompt('Введите число, с которого начнется отсчет!'),
+            delta = prompt('Введите число, на которое счетчик будет увеличивать свое значение!'),
+            iter  = prompt('Введите количество повторений!'),
+            count = 0;
+
+        start = start ? parseInt(start) : 0;
+        delta = delta ? parseInt(delta) : 0;
+        iter  = iter  ? parseInt(iter)  : 0;
+        count = start + delta*iter;
+
+        return  alert(`После ${iter} итераций -  итоговое число ${count}!`);
+
+    })();
+
+</script>
+</body>
+</html>
