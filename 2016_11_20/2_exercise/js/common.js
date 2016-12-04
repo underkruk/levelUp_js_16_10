@@ -1,9 +1,12 @@
 (function() {
 
-    let student = {
-        first_name: "Volodymyr",
-        last_name: "Kriukov",
-        age: 30,
+    let Student = {
+        construstor(first_name, last_name, age){
+            this.first_name = first_name;
+            this.last_name = last_name;
+            this.age = age;
+            return this;
+        },
         courses: [
             {
                 course: "javascript",
@@ -122,6 +125,8 @@
 
 
     };
+
+    let student = Object.create(Student).construstor("Ivan", "Ivanov", 20);
     console.log(student.getFullName());
     console.log(student.getAge());
     console.log(student.getCourses());
