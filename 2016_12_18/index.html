@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User info</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .patient_block{
+            width: 100%;           
+            text-align: center;
+            margin: 40px auto;
+        }
+        a{
+            cursor:pointer;
+            color: #fff;
+            font-size:22px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 60px 10px 60px;
+        }
+        a:hover{
+            color: #149780;
+        }
+        ul>li{
+            display:inline;
+        }
+        .user_info{        
+            text-align: center;    
+            width: 500px;
+            height: 500px;
+            position: relative;            
+        }
+        .user_logo{
+            width: 300px;
+            height: 300px;
+            background-image: url("img/person.png");
+            float: left;            
+        }
+        .dis_logo{
+            display:none;
+        }
+        .user_name{
+            float:right;
+        }
+        .profile{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+	<h1>List of Users</h1>
+
+    <div class="patient_block">
+        <ul>
+            <li><a href="#user1">User 1</a></li>
+            <li><a href="#user2">User 2</a></li>
+            <li><a href="#user3">User 3</a></li>
+            <li><a href="#user4">User 4</a></li>
+        </ul>
+    </div>
+
+    <div class="user_info">
+
+    <div class="user_logo dis_logo" id="user_logo"></div>
+
+        <div class="user_name">
+            <div class="profile">
+                <h3 id = "name"></p>
+                <h3 id = "lastName"></p>
+                <h3 id = "age"></p>
+            </div>
+        </div>
+        
+    </div>
+
+	
+
+<script src="js/main.js"></script>
+</body>
+</html>
