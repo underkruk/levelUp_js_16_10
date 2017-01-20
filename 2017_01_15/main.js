@@ -34,8 +34,8 @@
         } else {
 
             let $wrapValidation = document.getElementById('wrap_validation'),
-                $chartPage = document.getElementById('chart-page'),
-                $alert = document.getElementById('messageHi');
+                $chartPage      = document.getElementById('chart-page'),
+                $alert          = document.getElementById('messageHi');
 
             user.name = `@${username}`;
 
@@ -83,7 +83,7 @@
                         }
                     });
                 })
-                . then(res => {
+                .then(res => {
                     imageList = res;
                     imageList.forEach(function (el, iter) {
                         let $div = document.createElement('div');
