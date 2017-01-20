@@ -1,0 +1,14 @@
+{
+  "name": "2017_01_15",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.2.2"
+  }
+}
