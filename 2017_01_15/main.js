@@ -54,14 +54,20 @@
             let $p = document.createElement("p");
 
             if (data.name) {
-                $p.textContent = `${data.name}: ${data.message}`;
-                $messagesContainer.appendChild($p);
-                if (data.img) {
+
+            	if( data.message ){
+            		 $p.textContent = `${data.name}: ${data.message}`;
+                	 $messagesContainer.appendChild($p);
+            	}
+               
+                if (data.img != '') {
                     imageList.find(el => {
                         if( el.id === data.img ) {
                             let $img_chat = document.createElement('img');
                             $img_chat.setAttribute('src', el.url);
                             $img_chat.setAttribute('id', el.id);
+                            $p.textContent = `${data.name}:`;
+                            $messagesContainer.appendChild($p);
                             $messagesContainer.appendChild($img_chat);
                         }
                     });
@@ -95,7 +101,7 @@
                         $giphyContainer.appendChild($div);
                 });
                 $giphyContainer.addEventListener("click", function (ev) {
-                if (ev.target['id'] != 'giphy-container')
+                if (ev.target['id'] && ev.target['id'] != 'giphy-container')
                     ws.emit("chat message", {name: user.name, message: '', img: ev.target['id']})
 
                 });
