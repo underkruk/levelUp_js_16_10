@@ -1,89 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Chat</title>
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<style>
-	.wrap_validation{		
-		margin-top: 100px;
+    <meta charset="UTF-8">
+    <title>DOM | Socket io</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        .wrap_validation {
+            margin-top: 100px;
+        }
+        .message-container {
+            height: 400px;
+            border: 1px solid #ccc;
+            margin: 10px 0 10px 0;
+            overflow: scroll;
+        }
 
-	}	
-	.message-container{
-		height:400px;
-		border: 1px solid #ccc;
-		margin: 10px 0 10px 0;
-		overflow: scroll;
-	}
-	.giphy-container{
-		height:140px;
-		border: 1px solid #ccc;
-		margin: 10px 0 10px 0;
-		padding: 10px;				
-	}
-	img{
-		cursor: pointer;
-	}
-</style>
+        .giphy-container {
+            height: 140px;
+            border: 1px solid #ccc;
+            margin: 10px 0 10px 0;
+            padding: 10px;
+        }
+        img {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-
-	<div class="wrap_validation" id="wrap_validation">
-		<div class="container">
-			<div class="col-md-offset-3 col-md-6">
-				<h3 class="text-center">Please sign in</p>
-			<form id="form_validation" action="/">	
-				<div class="input-group form-group-lg">
-				  <span class="input-group-addon" id="basic-addon1">@</span>
-				  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" id="username" required>	  
-				</div>
-				<span class="text-danger text-left" id="error"></span>
-				<p style="margin-top:10px">				
-					<button class="btn btn-primary btn-lg btn-block" type="submit">Sign in</button>
-				</p>	
-			</form>
-			</div>
-		</div>
-	</div>
-
-	<div style="display:none" id="chart-page">
-
-			<div class="container">
-
-			<div class="col-md-offset-3 col-md-6">
-
-				<div class="alert alert-success text-center" role="alert" id="messageHi"></div>	
-
-			</div>	
-
-
-			<div class="col-md-12">
-
-
-				<div id="message_container" class="message-container"></div>
-
-
-				<div id="giphy-container" class="giphy-container"></div>
-
-					<form action="/" id="chart-form">
-						<textarea class="form-control" rows="3" placeholder="Type your message" id="chart-message"></textarea>
-
-
-						<div class="col-md-offset-10 col-md-2" style="margin-top:10px">
-							<button class="btn btn-primary btn-lg btn-block" type="submit">Send</button>
-						</p>
-
-					</form>
-
-			</div>
-		</div>
-		
-		
-	</div>
-
-
-	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-	<script src="main.js"></script>
+<div class="wrap_validation" id="wrap_validation">
+    <div class="container">
+        <div class="col-md-offset-3 col-md-6">
+            <h3 class="text-center">Please sign in</h3>
+                <form id="form_validation" action="/">
+                    <div class="input-group form-group-lg">
+                        <span class="input-group-addon" id="basic-addon1">@</span>
+                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" id="username" required>
+                    </div>
+                    <span class="text-danger text-left" id="error"></span>
+                    <p style="margin-top:10px">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Sign in</button>
+                    </p>
+                </form>
+        </div>
+    </div>
+</div>
+<div style="display:none" id="chart-page">
+    <div class="container">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="alert alert-success text-center" role="alert" id="messageHi"></div>
+        </div>
+        <div class="col-md-12">
+            <div id="message_container" class="message-container"></div>
+            <div id="giphy-container" class="giphy-container"></div>
+            <form action="/" id="chart-form">
+                <textarea class="form-control" rows="3" placeholder="Type your message" id="chart-message"></textarea>
+                <div class="col-md-offset-10 col-md-2" style="margin-top:10px">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
