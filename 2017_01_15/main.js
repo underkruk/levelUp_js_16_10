@@ -47,38 +47,35 @@
 
 				$alert.innerHTML = `Wellcom to chart <b>${user.name}</b>!`;
 
+					//Загрузка сообщений
 
-				//Загрузка сообщений
+					ws.on("chat message", data => {	
 
-				ws.on("chat message", data => {	
+					console.log(data);			
 
-				console.log(data);			
+					let $p = document.createElement("p");				
 
-				let $p = document.createElement("p");				
+					if ( data.name ){					
 
-				if ( data.name ){					
+						$p.textContent = `${data.name}: ${data.message}`;	
+						
+						$messagesContainer.appendChild($p);
 
-					$p.textContent = `${data.name}: ${data.message}`;	
-					
-					$messagesContainer.appendChild($p);
+						if (data.img){
 
-					if (data.img){
+							imageList.find(el => {
+								if(el.id === data.img){
+									let $img_chat = document.createElement('img');
+										$img_chat.setAttribute('src', el.url);							
+										$img_chat.setAttribute('id', el.id);
+										$messagesContainer.appendChild($img_chat);
+								}
+							})
+						}
 
-						imageList.find(el => {
+					}	
 
-							if(el.id === data.img){
-
-								let $img_chat = document.createElement('img');
-									$img_chat.setAttribute('src', el.url);							
-									$img_chat.setAttribute('id', el.id);
-									$messagesContainer.appendChild($img_chat);
-							};
-						})
-					}
-
-				}	
-
-			});
+				});
 
 				//загрузка giphy-картинок
 
@@ -96,7 +93,7 @@
 					})
 					.then(res=>{
 
-						imageList = res;	
+						imageList = res;
 
 		 				imageList.forEach(function (el,iter){
 
@@ -110,8 +107,7 @@
 								$giphyContainer.appendChild($div);
 		 					}							
 							
-						});	
-					
+						});
 
 						$giphyContainer.addEventListener("click", function(ev){							
 
@@ -119,19 +115,11 @@
 
 									ws.emit("chat message", { name: user.name,message:'', img: ev.target['id'] })																				
 
-							});							
-
-				})
-
-				.catch(function(e){
-
-				console.log(e);
-
-			})			
-
-
-
-
+							});
+					})
+					.catch(function(e){
+						console.log(e);
+					})
 			}
 				
 		}
@@ -148,10 +136,7 @@
 			ws.emit("chat message", { name: user.name, message: message })
 
 			$chatMessageInput.value = "";
-
-	}
-	
-
+		}
 
 
 })();
