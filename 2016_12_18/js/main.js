@@ -9,6 +9,16 @@ let users = [
 ];
 
 
+window.addEventListener("load", function(ev){
+
+	let user = users.find(el => el.def === true );
+
+	show_user_information(user);	
+
+	history.pushState({ id: user.id }, null, `${location.origin}/${user.id}/?name=${user.name}&lastName=${user.lastName}&age=${user.age}`);
+
+});
+
 
 window.addEventListener("popstate", function(ev){		
 
@@ -17,9 +27,10 @@ window.addEventListener("popstate", function(ev){
 	let user = users.find(el => el.id === ev.state.id);
 
 	show_user_information(user);
+
+	console.log( location );
+
 });
-
-
 
 
 document.body.addEventListener("click", function(ev){
@@ -34,10 +45,35 @@ document.body.addEventListener("click", function(ev){
 
 		show_user_information(user);
 
-		history.pushState({  id }, null, `${location.origin}/${id}/?name=${user.name}&lastName=${user.lastName}&age=${user.age}`)
+		history.pushState({  id }, null, `${location.origin}/${id}/?name=${user.name}&lastName=${user.lastName}&age=${user.age}`);
 		
-	
 	}
+});
+
+
+window.addEventListener("hashchange", function(){
+
+	if ( location.hash ){
+
+		let id 			= location.pathname.slice(1,-1),
+		 	user 		= users.find(el => el.id === id );
+
+		let handleHash 	= location.hash.match(/(\w+)=(\w+)/);
+
+		if (  Array.isArray(handleHash) && handleHash.length === 3 && user[ handleHash[1] ]){
+
+				user[ handleHash[1] ] = handleHash[2];
+
+				show_user_information( user );
+
+				history.pushState({  id }, null, `${location.origin}/${id}/?name=${user.name}&lastName=${user.lastName}&age=${user.age}`);
+
+				console.log( user );
+
+			}
+		
+		}	
+
 });
 
 
@@ -51,6 +87,5 @@ function show_user_information(person){
 
 		document.getElementById("user_logo").classList.remove( "dis_logo" );	
 }
-
 
 })()

@@ -1,11 +1,11 @@
 {
   "name": "2016_12_18",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "http-server -p 8000 -c-1 --silent"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }
