@@ -3,6 +3,7 @@
 	let personal = [];
 
     "use strict";
+
     function Bar(name, barmans = [], waiters = [], drinks = [], orders = [], monyeTips){
 		this.name 		= name;
 		this.barmans 	= barmans;
@@ -34,7 +35,7 @@
 
     	} else if (post === "waiter"){
 
-    	 this.waiters.push( person ); 
+    	   this.waiters.push( person ); 
 
     	 }   	
     }
@@ -117,54 +118,42 @@ Waiter.prototype.constructor = Object.create(Person.constructor);
 Waiter.prototype.constructor = Waiter;
 
 
-let drinks = [{
-	drinkName : "vodka",
-	count: 5
-},
-{
-	drinkName: "wine",
-	count: 10
-}, 
-{
-	drinkName: "rom",
-	count: 2
-},
-{
-	drinkName: "juice",
-	count: 20
-},
-{
-	drinkName: "wiski",
-	count: 5
-}]
+let drinks = [{ vodka: 5 },{ wine: 5 }, { rom: 2 },{ juice: 20 },{ wiski: 5 }]
 
 
 
 let laguna = new Bar("Laguna", [], [], drinks, [], 100);
 
-console.log(laguna);
+// console.log(laguna);
 
-let vano   = new Barman ("Vano", 30, "LongIland");
-let sasho  = new Barman ("Sasho", 20, "Margarita");
-let masha  = new Waiter("Masha", 21);
-let anton  = new Waiter("Anton", 24);
+let barman_1   = new Barman ( "Vano", 30, "LongIland" );
+let barman_2   = new Barman ( "Sasho", 20, "Margarita" );
+let barman_3   = new Barman ( "Huan", 25, "vodka" );
+
+
+let waiter_1  = new Waiter("Masha", 21);
+let waiter_2  = new Waiter("Anton", 24);
 
 laguna.addDrinks("vodka", 10);
 laguna.addDrinks("wiski", 1);
 
 
-laguna.addNewPerson(vano, "barman");
-laguna.addNewPerson(sasho, "barman");
-laguna.addNewPerson(masha, "waiter");
-laguna.addNewPerson(anton, "waiter");
+laguna.addNewPerson( barman_1, "barman" );
+laguna.addNewPerson( barman_2, "barman" );
+laguna.addNewPerson( barman_3, "barman" );
+
+laguna.addNewPerson( waiter_1, "waiter" );
+laguna.addNewPerson( waiter_2, "waiter" );
+
+
 
 console.log(laguna);
 
-laguna.firePerson(vano, "barman");
-laguna.firePerson(anton, "waiter");
+laguna.firePerson(barman_1, "barman");
+laguna.firePerson(waiter_2, "waiter");
 
 laguna.getMonyeTips();
 
-console.log(laguna);
+// console.log(laguna);
 
 })();
