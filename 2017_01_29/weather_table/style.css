@@ -1,0 +1,84 @@
+
+body{
+	padding:0;
+	margin: 0;
+	background-color: #222;
+  font-size:20px;
+}
+
+.wi-style{
+	font-size: 8.5em;
+	color: #fff;
+}
+.weather-container{
+  position: relative;
+  background-color: #0098db;  
+  color: #fff;  
+  height: 100vh;  
+}
+.current-weather{
+  position: absolute;
+  top:0;
+  width:100%;
+  height:400px; 
+
+}
+.temp-size{
+  font-size:40px;
+  margin-top: 0px;
+}
+.align-center{
+  text-align:center;  
+}
+.wrap_date{
+  dispaly:block;  
+  margin: 10px 0 40px 0;
+}
+.text-right{
+  margin-right:40px;  
+  float:right;
+}
+.text-left{
+  margin-left:40px;    
+  float:left;
+}
+
+.daily-weather{
+  position: absolute;
+  bottom:0;
+  width:100%; 
+}
+
+.wrap_other_indicators{
+  dispaly:block;
+  font-size:20px;  
+}
+
+.item{  
+  background-color: #0098db;   
+  height:200px; 
+  border: 1px solid #fff; 
+  cursor: pointer;  
+}
+.item p{
+  margin: 10px 0 5px 0;  
+}
+
+.item:hover{
+  background-color: #0370a0;
+  border: 1px solid #0370a0;
+}
+
+@media only screen and (max-width : 992px) {
+
+  body{
+    font-size: 1px;
+  }
+}
+
+.error_message{
+  margin: 0 auto;
+  padding: 20px;
+  text-align:center;
+
+}
