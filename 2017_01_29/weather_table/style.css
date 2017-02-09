@@ -6,22 +6,24 @@ body{
   font-size:20px;
 }
 
+.wi{
+  font-size:1.5em;
+}
+
 .wi-style{
-	font-size: 8.5em;
+	font-size: 6.5em;
 	color: #fff;
 }
 .weather-container{
   position: relative;
   background-color: #0098db;  
-  color: #fff;  
-  height: 100vh;  
+  color: #fff;
+  padding: 20px ; 
 }
-.current-weather{
-  position: absolute;
-  top:0;
+.current-weather{  
   width:100%;
-  height:400px; 
-
+  height:500px; 
+  margin-top: 30px;
 }
 .temp-size{
   font-size:40px;
@@ -43,9 +45,7 @@ body{
   float:left;
 }
 
-.daily-weather{
-  position: absolute;
-  bottom:0;
+.daily-weather{  
   width:100%; 
 }
 
@@ -60,6 +60,10 @@ body{
   border: 1px solid #fff; 
   cursor: pointer;  
 }
+.item a{
+  color: #fff;
+  text-decoration: none;
+}
 .item p{
   margin: 10px 0 5px 0;  
 }
@@ -72,7 +76,7 @@ body{
 @media only screen and (max-width : 992px) {
 
   body{
-    font-size: 1px;
+    font-size: 13px;
   }
 }
 
@@ -80,5 +84,11 @@ body{
   margin: 0 auto;
   padding: 20px;
   text-align:center;
-
+}
+.degree-wrap{
+  display: block;
+  height: 40px;
+  background-color: #000;
+  color:#fff;
+  text-align:center;
 }

@@ -9,18 +9,30 @@
 	
 </head>
 <body>
-	<div class="col-md-12">
+	<div class="container">
+		
+		<div class="col-md-offset-1 col-md-10 col-xs-12">
 
-		<div class="container">
-
-			<div class="col-md-offset-1 col-md-10 col-xs-12">
-				
+			<div class="row">
+					
 				<div id="weather-container" class="weather-container">
 
-					<div id="current-weather" class="current-weather">
+					<div class="degree-wrap">
+						<label>
+							<i class="wi wi-celsius"></i>&nbsp;						
+							<input type="radio" name="degree" value="1" checked>
+						</label>
+						<label>
+							<i class="wi wi-fahrenheit"></i>&nbsp;							
+							<input type="radio" name="degree" value="0">
+						</label>
+					</div>
 
-						<p class="wrap_date">
-							<span id="currently_date" class="text-left"></span>		
+					<div id="current-weather" class="current-weather">						
+
+						<p class="wrap_date">					
+
+							<span id="currently_date" class="text-left"></span>						
 							<span id="currently_time" class="text-right"></span>
 						</p>
 
@@ -30,30 +42,34 @@
 						<p class="align-center" id="currently_summary"></p>							
 						<p class="align-center temp-size">
 							<span id="currently_temp"></span>
-							<i class="wi wi-fahrenheit"></i>
+							<i class="wi" id="currently_temp_icon"></i>
 						<p>
 
-						<div class="col-md-offset-2 col-md-8">
-							<p class="wrap_other_indicators">								
+						<div class="col-md-offset-2 col-md-8 col-md-offset-2">
+							<p class="wrap_other_indicators">							
 								<p class="text-left" title="Комфорт">
 									<i class="wi wi-humidity"></i>&nbsp;
 									<span id="currently_humidity"></span>
 								</p>
-								
+									
 								<p class="text-right" title="Тиск">
 									<i class="wi wi-barometer"></i>&nbsp;
 									<span id="currently_barometer"></span>
 								</p>
 							</p>	
-						</div>																					
+						</div>									
+																										
 					</div>	
-							
-					<div class="daily-weather" id="daily_weather_container"></div>	
-				</div>
-			</div>							
-		</div>
-	</div>	
-	
+
+						<div class="row">				
+								
+							<div class="daily-weather" id="daily_weather_container"></div>	
+
+						</div>
+				</div>	
+			</div>
+		</div>							
+	</div>		
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="main.js"></script>	
