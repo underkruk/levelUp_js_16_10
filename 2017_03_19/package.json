@@ -1,0 +1,15 @@
+{
+  "name": "patient_list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {    
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"   
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="containter">
+
+	<nav>
+		<ul>
+			<li><a href="/" id="patientsList">Patients</a></li>
+			<li><a href="/" id="add_new_patient">Add new patients</a></li>
+		</ul>
+	</nav>
+
+	<div id="content">	
+
+	<div class="patients_container" id="patients_container"></div>
+
+	<div class="patient_detail" id="patient_detail">
+		
+		<h1>Hello</h1>
+	</div>
+
+	<div class="form_new_patient" id="form_new_patient">
+
+		<form action="/patient" method="POST">
+			<h1>Add new patient</h1>	
+			<label for="First name">First Name* </label><br>
+			<input type="text" id="first_name" name="first_name" required><br>
+			<label for="Last name">Last Name*: </label><br>
+			<input type="text" id="last_name" name="last_name" required><br>		
+			<label for="policy number">Policy number: </label><br>
+			<input type="text" id="policy_number" name="policy_number"><br>
+			<label for="date birth">Date of Birth: </label><br>
+			<input type="text" id="date_birth" name="date_birth"><br>
+			<button class="button" id="add_new_patient">Add patient</button>
+		</form>
+
+	</div>		
+
+	
+	<div class="bg-container"></div>
+
+		
+</div>
+
+
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

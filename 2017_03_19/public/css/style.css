@@ -1,0 +1,158 @@
+body{	
+	margin:0;
+	padding:0;
+}
+
+.containter{
+	background-image: url(./../img/doctor.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index:-1;
+}
+
+nav{
+	width:100%;
+	height:60px;
+	background-color: #b3369a;	
+}
+
+input{
+	margin:5px;
+	height:30px;
+	width:95%;
+	border-radius: 3px;
+	float: left;
+}
+
+
+
+nav ul{
+	margin:0;	
+}
+
+nav ul li{
+	list-style: none;
+	display: inline-block;	
+	margin: 20px 5px;
+}
+
+nav ul li a{
+	padding: 5px 15px; 	
+	background-color: #fff;
+	border-radius: 12px;
+	color: #b3369a;
+	text-decoration: none;	
+}
+a:hover, .button:hover{
+	background-color: #363d47;		
+	color:#fff;
+}
+
+.active{
+	background-color: #363d47;		
+	color:#fff;
+}
+
+.patients_container{
+	position: absolute;
+	padding:10px;
+	width: 51%;	
+	display:none;	
+	top:8%;	
+	height: 500px;
+	overflow-y: auto; 	
+	z-index:10;	
+}
+
+.item-one{	
+	width:200px;
+	height:200px;	
+	margin: 15px;
+	padding:5px;	
+	display:inline-block;
+	z-index: 10;
+	color: #fff;	
+	border: 2px solid #0ed9e4;
+}
+
+.item-one h4{
+	cursor: pointer;
+	font-size: 20px;
+	color: #0ed9e4;		
+}
+
+.item-one h4:hover{
+	color: #fff;
+	
+}
+.item-one span{
+	font-weight: bold;
+}
+
+.form_new_patient, .patient_detail{
+	position: absolute;
+	padding:20px;
+	width:450px;
+	height: 400px;	
+	display:none;
+	left:10%;
+	top:10%;
+		
+}
+
+.form_new_patient{
+	z-index:10;
+}
+
+.patient_detail{
+	z-index:9;
+}
+
+.patient_detail p{
+	color: #fff;
+	font-size: 24px;
+}
+
+.patient_detail h1, span{
+	color: #0ed9e4;
+}
+
+
+.form_new_patient h1{	
+	text-align: center;
+	text-transform: uppercase;
+	color: #b3369a;
+	font-size: 30px;	
+}
+
+.form_new_patient label{
+	color: #fff;
+	padding-left: 10px;
+}
+
+.button{
+	margin-top: 20px;
+	color: #fff;
+	background-color: #b3369a;
+	border: 3px solid  #b3369a;
+	padding: 10px 30px; 		
+	border-radius: 5px;
+	margin-right:13px;
+	float:right;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.bg-container{
+	width: 53%;
+	background-color: #b3369a;
+	opacity:0.1;
+	z-index:1;	
+}
+
+
+
+
+
