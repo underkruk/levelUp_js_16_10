@@ -1,25 +1,25 @@
 <h2>Laravel BOM API</h2>
 
-<p>Laravel BOM API will provide you the tools for making REST FULL BOM API</p>
+<p>Laravel BOM API will provide you the tools for making REST FULL BOM API for creating web or mobile applications</p>
 
-<p>Here is a list of the packages installed:</p>
+<p>Here is a list of the packages installed in project:</p>
 
 
 <ul>  
   <li>
-    <a href="https://laravel.com/docs/5.4/passport">Laravel Passport</a>
+    <a href="https://laravel.com/docs/5.4/passport" target="_blank">Laravel Passport</a>
   </li>
   <li>
-    <a href="https://github.com/spatie/laravel-fractal">Laravel Fractal</a>
+    <a href="https://github.com/spatie/laravel-fractal" target="_blank">Laravel Fractal</a>
   </li>
 </ul>
 
 
 <h2>Installation</h2>
 
-<p>Use Git or checkout with SVN using the web URL.</p>
+<p>Download manually or use Git for uploading project to local computer.</p>
 
-<p>To install the project you can use composer. Run <code>composer install</code> and istall all dependencies</p>
+<p>To install the project you can use composer. After downloading project run <code>composer install</code> and istall all dependencies</p>
 
 <p>Modify the .env file to suit your needs</p>
 
@@ -59,7 +59,14 @@
   <code>php artisan migrate</code>
 </pre>
 
+<p>After created migration add to DB example values <code>php artisan db:seed</code></p>
+
+
 <p>Then run <code>php artisan passport:install</code></p>
+
+<p>Use <code>php artisan routes</code> command to see all of api routes</p>
+
+
 
 
 
